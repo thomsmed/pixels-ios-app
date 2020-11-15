@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ba0-43-bQd">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Camera-->
+        <scene sceneID="MvK-KM-Lqx">
+            <objects>
+                <viewController id="Ba0-43-bQd" customClass="CameraViewController" customModule="Pixels" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bkD-DR-zy9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Kh3-z2-c9c">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="on1-rN-UGt" userLabel="Camera">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="409"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5U5-Af-6f0" userLabel="Modified Camera">
+                                        <rect key="frame" x="0.0" y="409" width="414" height="409"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="on1-rN-UGt" firstAttribute="height" secondItem="5U5-Af-6f0" secondAttribute="height" id="hQ8-as-72E"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Idj-1F-Nv0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Idj-1F-Nv0" firstAttribute="top" secondItem="Kh3-z2-c9c" secondAttribute="top" id="aYf-Fg-Lfv"/>
+                            <constraint firstItem="Idj-1F-Nv0" firstAttribute="trailing" secondItem="Kh3-z2-c9c" secondAttribute="trailing" id="l5d-Mc-cVh"/>
+                            <constraint firstItem="Idj-1F-Nv0" firstAttribute="bottom" secondItem="Kh3-z2-c9c" secondAttribute="bottom" id="tUG-Xr-nHW"/>
+                            <constraint firstItem="Kh3-z2-c9c" firstAttribute="leading" secondItem="Idj-1F-Nv0" secondAttribute="leading" id="xOZ-7F-DL6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Camera" id="eqH-Wc-Zn8"/>
+                    <connections>
+                        <outlet property="cameraView" destination="on1-rN-UGt" id="Xbk-6y-EBI"/>
+                        <outlet property="modifiedCameraView" destination="5U5-Af-6f0" id="Sb5-sl-58a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Smf-gG-ccf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="157" y="211"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

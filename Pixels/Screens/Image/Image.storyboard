@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dt7-Mx-nTl">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Image-->
+        <scene sceneID="erY-71-3GF">
+            <objects>
+                <viewController id="Dt7-Mx-nTl" customClass="ImageViewController" customModule="Pixels" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5sH-4V-J3F">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UjG-ys-XcR">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oad-dz-zVT" userLabel="Original Image">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="272.5"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8V9-tf-cwb" userLabel="Modified Image">
+                                        <rect key="frame" x="0.0" y="272.5" width="414" height="273"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oHb-Us-58Y" userLabel="Pixels" customClass="PixelGridView" customModule="Pixels" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="545.5" width="414" height="272.5"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="oHb-Us-58Y" firstAttribute="height" secondItem="Oad-dz-zVT" secondAttribute="height" id="Cy6-9U-RUJ"/>
+                                    <constraint firstItem="Oad-dz-zVT" firstAttribute="height" secondItem="8V9-tf-cwb" secondAttribute="height" id="uDd-lF-AyC"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9Z2-yt-Ahw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UjG-ys-XcR" firstAttribute="top" secondItem="9Z2-yt-Ahw" secondAttribute="top" id="2MQ-Hb-gdE"/>
+                            <constraint firstItem="9Z2-yt-Ahw" firstAttribute="trailing" secondItem="UjG-ys-XcR" secondAttribute="trailing" id="d9D-qW-Y3V"/>
+                            <constraint firstItem="UjG-ys-XcR" firstAttribute="leading" secondItem="9Z2-yt-Ahw" secondAttribute="leading" id="k3c-KZ-Oul"/>
+                            <constraint firstItem="9Z2-yt-Ahw" firstAttribute="bottom" secondItem="UjG-ys-XcR" secondAttribute="bottom" id="n2M-I0-Hq8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Image" id="UE7-lC-ocA">
+                        <barButtonItem key="leftBarButtonItem" title="Select" id="jHZ-7a-0f9"/>
+                        <barButtonItem key="rightBarButtonItem" title="Camera" id="uMN-rB-2Yg">
+                            <connections>
+                                <segue destination="Tid-sT-dp5" kind="show" id="Zhh-We-Kyu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="Oad-dz-zVT" id="ZgE-ZO-cvN"/>
+                        <outlet property="modifiedImageView" destination="8V9-tf-cwb" id="G2M-kn-oa9"/>
+                        <outlet property="pixelGridView" destination="oHb-Us-58Y" id="ANi-fs-ubf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oXf-JJ-xAP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="171" y="129"/>
+        </scene>
+        <!--Camera-->
+        <scene sceneID="Pes-iP-Hlu">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Camera" id="Tid-sT-dp5" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="pTz-JS-M69"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nKr-MJ-gMb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="891" y="129"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
